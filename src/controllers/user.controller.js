@@ -1,3 +1,4 @@
+const verifyProperties = require('../helpers/verify-properties.helper');
 const { dbGetUser, dbInsertUser, dbGetUserById, dbDeleteUserById, dbUpdateUserByIdPut, dbUpdateUserByIdPatch} = require('../services/user.service');
 
 async function getUser(req, res) {
@@ -28,9 +29,12 @@ async function createUser(req, res){
         });
     } catch (error) {
         console.error(error);
+
+        const errors = verifyProperties(error);
+
         res.json({
             ok: false,
-            msg: 'Ha ocurrido un error al crear el usuario'
+            errors
         });
     }
 }

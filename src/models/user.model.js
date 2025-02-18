@@ -3,18 +3,18 @@ const mongoose = require( 'mongoose' );
 const UserSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: [true, 'El nombre del usuario es obligatorio']
     },
     username: {
         type: String,
-        lowercase: true,
-        required: true
+        lowercase: [true, 'El nombre de usuario debe estar en minúsculas'],
+        required: [true, 'El nombre de usuario es obligatorio'],
     },
     password: {
         type: String,
-        required: true
+        required: [true, 'El password es obligatorio']
     },
-    roles: {
+    role: {
         type: String,
         enum: [ 'registered', 'moderator', 'admin' ],
         default: 'registered'

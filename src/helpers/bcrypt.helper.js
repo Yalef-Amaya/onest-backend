@@ -5,7 +5,17 @@ function encryptPassword( pass ) {
     console.log( 'Salt: ', salt );
 
     const hashPassword = bcrypt.hashSync( pass, salt );
+    console.log( 'hashPassword: ', hashPassword );
+    
     return hashPassword;
 }
 
-module.exports = encryptPassword;
+function verifyEncriptedPassword( pass, hashPass ){
+
+    return bcrypt.compareSync(pass, hashPass);
+}
+
+module.exports = {
+    encryptPassword,
+    verifyEncriptedPassword
+};
