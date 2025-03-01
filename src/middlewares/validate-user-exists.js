@@ -7,7 +7,7 @@ async function validateUserExists  (req, res, next) {
 
     try {
         const dataFound = await dbGetUserByUsername( inputdata.username);
-        if ( dataFound){
+        if ( !dataFound){
             return res.json({
                 ok: false,
                 msg: 'El usuario ya existe'
