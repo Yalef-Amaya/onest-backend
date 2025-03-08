@@ -1,5 +1,5 @@
 const express = require('express');
-const {  } = require( '../controllers/productividad.controller');
+const { getProductividadById, createProductividad, updateProductividadByIdPut, deleteProductividadById } = require( '../controllers/productividad.controller');
 
 const validateId = require('../middlewares/validate-id.middleware');
 

@@ -7,5 +7,4 @@ const verifyProperties = ( error ) => {
     return errors;      
 }
 
-
 module.exports = verifyProperties;

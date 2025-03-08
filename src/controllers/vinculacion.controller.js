@@ -1,4 +1,4 @@
-const verifyProperties = require('../helpers/verifyProperties');
+const verifyProperties = require('../helpers/verify-properties.helper');
 const { dbGetVinculacion, dbInsertVinculacion, dbGetVinculacionById, dbDeleteVinculacion, dbUpdateVinculacionById, dbDeleteVinculacionById} = require('../services/vinculacion.service');
 
 async function getVinculacion(req, res){

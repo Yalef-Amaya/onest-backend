@@ -1,5 +1,5 @@
 const verifyProperties = require('../helpers/verify-properties.helper');
-const { dbGetUser, dbInsertUser, dbGetUserById, dbDeleteUserById, dbUpdateUserByIdPut, dbUpdateUserByIdPatch} = require('../services/user.service');
+const { dbGetUser, dbInsertUser, dbGetUserById, dbDeleteUserById} = require('../services/user.service');
 
 async function getUser(req, res) {
     try {
@@ -27,15 +27,20 @@ async function createUser(req, res){
             ok: true,
             data: data
         });
-    } catch (error) {
-        console.error(error);
+    } 
+    catch (error) {
+        console.error(error.errors);
 
-        const errors = verifyProperties(error);
+        if( error?.name === 'ValidatorError' ){
+            const errors = verifyProperties(error);
 
-        res.json({
-            ok: false,
-            errors
-        });
+            console.error( errors );
+
+            return res.json({
+                ok: false,
+                errors
+            })
+        } 
     }
 }
 

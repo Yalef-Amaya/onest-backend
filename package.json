@@ -1,28 +1,19 @@
 {
-  "name": "onest-project-backend",
+  "name": "onest-backend",
   "version": "0.0.1",
-  "description": "Backend API para Onest",
   "main": "index.js",
   "scripts": {
     "dev": "node --watch ./src/index.js"
   },
-  "keywords": [
-    "node",
-    "express",
-    "mongoose",
-    "cors",
-    "bcrypt",
-    "multer"
-  ],
-  "author": "Yalef Arim Amaya Morales",
+  "keywords": [],
+  "author": "Yalef Amaya Morales <yaam2112@outlook.com>",
   "license": "ISC",
+  "description": "BackEnd: API para Onest backend",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.5"
-  },
-  "devDependencies": {
-    "@types/node": "^22.13.1"
   }
 }
