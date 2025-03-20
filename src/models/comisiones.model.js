@@ -6,7 +6,7 @@ const ComisionesSchema = new mongoose.Schema({
         ref: 'users',
         required: [true, 'El id del usuario es obligatorio']
     },
-    oficina: {
+    office: {
         type: String,
         required: [true, 'La oficina es obligatoria']
     },

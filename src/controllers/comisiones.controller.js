@@ -1,5 +1,5 @@
 const verifyProperties = require('../helpers/verify-properties.helper');
-const { dbGetComisiones, dbInsertComisiones, dbGetComisionesById, dbDeleteComisiones, dbUpdateComisionesById, dbDeleteComisionesById} = require('../services/comisiones.service');
+const { dbGetComisiones, dbInsertComisiones, dbGetComisionesById, dbUpdateComisionesById, dbDeleteComisionesById} = require('../services/comisiones.service');
 
 async function getComisiones(res, res){
     try {

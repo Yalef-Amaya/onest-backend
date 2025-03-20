@@ -4,11 +4,12 @@ const UserSchema = new mongoose.Schema({
     typeDoc: {
         type: String,
         enum: [ 'CC', 'CE', 'Pasaporte' ],
-        default: 'CC'
+        default: 'CC',
     },
     nDoc: {
         type: String,
-        unique: true
+        unique: true,
+        required: [true, 'El número de documento es obligatorio']
     },
     name: {
         type: String,
@@ -27,10 +28,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, 'El password es obligatorio']
     },
-    role: {
-        type: String,
-        enum: [ 'registered', 'comercial', 'cartera' ,'admin', 'operativo', 'tesoreria' ],
-        default: 'registered'
+    cargo: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'cargos',
+        required: [true, 'El cargo es obligatorio']
     },
     office: {
         type: String,
