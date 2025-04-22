@@ -1,7 +1,7 @@
 const verifyProperties = require('../helpers/verify-properties.helper');
 const { dbGetProductividad, dbInsertProductividad, dbGetProductividadById, dbDeleteProductividad, dbUpdateProductividadById, dbDeleteProductividadById} = require('../services/productividad.service');
 
-async function getProductividad(res, res){
+async function getProductividad(req, res){
     try {
         const data = await dbGetProductividad();
 

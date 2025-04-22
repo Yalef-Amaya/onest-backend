@@ -33,22 +33,22 @@ const ComisionesSchema = new mongoose.Schema({
     }],
     totalComision: {
         type: Number,
-        required: [true, 'El total radicado es obligatorio']
-    },
-    productividadId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'productividad',
-        required: [true, 'La meta del asesor es obligatoria']
-    },
-    pagada: {
-        type: Boolean,
-        default: false
-    },
-    frecuenciaPago: {
-        type: String,
-        required: [true, 'La frecuencia de pago es obligatoria'],
-        enum: ['semanal', 'mensual']
-    },
+        // required: [true, 'El total radicado es obligatorio']
+    }
+    // productividadId: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'productividad',
+    //     required: [true, 'La meta del asesor es obligatoria']
+    // },
+    // pagada: {
+    //     type: Boolean,
+    //     default: false
+    // },
+    // frecuenciaPago: {
+    //     type: String,
+    //     required: [true, 'La frecuencia de pago es obligatoria'],
+    //     enum: ['semanal', 'mensual']
+    // },
 });
 
 const ComisionesModel = mongoose.model(

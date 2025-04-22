@@ -1,13 +1,12 @@
 const express = require('express');
 const { getUser, createUser, getUserById, deleteUserById, updateUserByIdPut, updateUserByIdPatch } = require( '../controllers/user.controller');
 const validateId = require('../middlewares/validate-id.middleware');
-const validateUserExists = require('../middlewares/validate-user-exists');
-
+const { validateUserExistsByUserName } = require('../middlewares/validate-user-exists.middleware');
 const router = express.Router();
 
 router.get('/', getUser);
 
-router.post('/', validateUserExists, createUser);
+router.post('/', validateUserExistsByUserName, createUser);
 
 router.get('/:id', validateId, getUserById);
 

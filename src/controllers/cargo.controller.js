@@ -1,7 +1,7 @@
  const verifyProperties = require('../helpers/verify-properties.helper');
  const { dbGetCargo, dbInsertCargo, dbGetCargoById, dbDeleteCargo, dbUpdateCargoById, dbDeleteCargoById} = require('../services/cargo.service');
 
- async function getCargo(res, res){
+ async function getCargo(req, res){
      try {
          const data = await dbGetCargo();
 

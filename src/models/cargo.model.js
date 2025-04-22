@@ -6,18 +6,9 @@ const CargoSchema = new mongoose.Schema({
         required: [true, 'El nombre del cargo es obligatorio'],
         unique: true
     },
-    userId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'users',
-        required: [true, 'El id del usuario es obligatorio']
-    },
     description: {
         type: String,
-    },
-    bossId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'users'
-    },
+    }
 },{
     timestamps: true,
     versionKey: false

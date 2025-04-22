@@ -1,9 +1,8 @@
 const verifyProperties = require('../helpers/verify-properties.helper');
-const { dbGetComisiones, dbInsertComisiones, dbGetComisionesById, dbUpdateComisionesById, dbDeleteComisionesById} = require('../services/comisiones.service');
 
-async function getComisiones(req, res){
+async function getOffice(req, res){
     try {
-        const data = await dbGetComisiones();
+        const data = await dbGetOffice();
 
         res.json({
             ok: true,
@@ -13,18 +12,15 @@ async function getComisiones(req, res){
         console.error(error);
         res.json({
             ok: false,
-            msg: 'Ha ocurrido un error al obtener las Comisioness'
+            msg: 'Ha ocurrido un error al obtener las oficinas'
          });
     }
 }
 
-async function createComisiones(req, res){
+async function createOffice(req, res){
     const inputdata = req.body;
-    const userId = req.authUser.id;
-    inputdata.userId = userId;
-
     try {
-        const data = await dbInsertComisiones(inputdata);
+        const data = await dbInsertOffice(inputdata);
 
         res.json({
             ok: true,
@@ -42,11 +38,11 @@ async function createComisiones(req, res){
     }
 }
 
-async function getComisionesById(req, res){
+async function getOfficeById(req, res){
     const id = req.params.id;
 
     try {
-        const data = await dbGetComisionesById(id);
+        const data = await dbGetOfficeById(id);
 
         res.json({
             ok: true,
@@ -57,16 +53,16 @@ async function getComisionesById(req, res){
         console.error(error);
         res.json({
             ok: false,
-            msg: 'Ha ocurrido un error al obtener las Comisiones por id'
+            msg: 'Ha ocurrido un error al obtener la oficina por id'
         });
     }
 }
 
-async function deleteComisionesById(req, res){
+async function deleteOfficeById(req, res){
    const id  = req.params.id;
 
    try {
-       const data = await dbDeleteComisionesById(id);
+       const data = await dbDeleteOfficeById(id);
 
        res.json({
            ok: true,
@@ -76,17 +72,17 @@ async function deleteComisionesById(req, res){
        console.error(error);
        res.json({
            ok: false,
-           msg: 'Ha ocurrido un error al eliminar las Comisiones'
+           msg: 'Ha ocurrido un error al eliminar la oficina'
        });
    }
 }
 
-async function updateComisionesByIdPut(req, res){
+async function updateOfficeByIdPut(req, res){
    const id = req.params.id;
    const inputdata = req.body;
 
    try {
-       const data = await dbUpdateComisionesById(id, inputdata);
+       const data = await dbUpdateOfficeById(id, inputdata);
 
        res.json({
            ok: true,
@@ -105,9 +101,9 @@ async function updateComisionesByIdPut(req, res){
 }
 
 module.exports = {
-   getComisiones,
-   createComisiones,
-   getComisionesById,
-   deleteComisionesById,
-   updateComisionesByIdPut
+   getOffice,
+   createOffice,
+   getOfficeById,
+   deleteOfficeById,
+   updateOfficeByIdPut
 };

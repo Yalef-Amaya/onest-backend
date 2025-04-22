@@ -12,7 +12,7 @@ router.post('/', validateAuthUser,createComisiones);
 
 router.get('/:id', validateId, getComisionesById);
 
-router.delete('/:id', validateId, deleteComisionesById);//
+router.delete('/:id', validateAuthUser, validateId, deleteComisionesById);//
 
 router.put('/:id', validateId, updateComisionesByIdPut);
 

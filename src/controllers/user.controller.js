@@ -18,8 +18,8 @@ async function getUser(req, res) {
     }
 }
 
-async function createUser(req, res){
-    const inputdata = req.body;
+const createUser = async (req, res) => {
+    const { nDoc, name, username, password, cargo} = req.body;
     try {
         const data = await dbInsertUser(inputdata);
 

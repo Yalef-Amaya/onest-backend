@@ -27,9 +27,9 @@ async function dbGetComisionesById( id ){
     );
 }
 
-// async function dbDeleteComisionesById(id){
-//     return await ComisionesModel.findByIdAndDelete( id );
-// }
+ async function dbDeleteComisionesById(id){
+     return await ComisionesModel.findByIdAndDelete( id );
+ }
 
 async function dbUpdateComisionesById( id, newComision ){
     return await ComisionesModel.findByIdAndUpdate(
@@ -43,6 +43,6 @@ module.exports = {
     dbGetComisiones,
     dbInsertComisiones,
     dbGetComisionesById,
-    // dbDeleteComisionesById,
+    dbDeleteComisionesById,
     dbUpdateComisionesById
 };
