@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "dev": "node --watch ./src/bin/www"
+    "dev": "node --env-file .env --watch ./src/index.js"
   },
   "keywords": [],
   "author": "Yalef Amaya Morales <yaam2112@outlook.com>",
