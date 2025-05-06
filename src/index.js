@@ -13,8 +13,6 @@ app.use( cors ());
 app.use( '/api/usuario', require( './routes/user.routes.js' ) );
 app.use( '/api/cargo', require( './routes/cargo.routes.js'));
 app.use( '/api/vinculacion', require( './routes/vinculacion.routes.js'));
-app.use( '/api/productividad', require( './routes/productividad.routes.js'));
-app.use( '/api/comisiones', require( './routes/comisiones.routes.js'));
 app.use( '/api/auth', require( './routes/auth.routes.js'));
 
 app.listen( PORT, () => {

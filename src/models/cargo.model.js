@@ -5,9 +5,6 @@ const CargoSchema = new mongoose.Schema({
         type: String,
         required: [true, 'El nombre del cargo es obligatorio'],
         unique: true
-    },
-    description: {
-        type: String,
     }
 },{
     timestamps: true,
